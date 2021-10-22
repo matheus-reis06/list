@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+
+
 function App() {
+const [item, setItem] = useState(''); //O item é o estado em si. Enquanto o setItem é a função que permite modificar o item. Semelhante ao setState
+const [itemList, setItemList] = useState([]);
+
+const addItem = () => {
+  setItemList([item].concat(itemList))
+  setItem('')
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Nexus Group</h1>
+      <h1>Lista de Compras</h1>
+      <input type="text" placeholder="Item" value={item} name="item" onChange = {e => setItem(e.target.value)} />
+      <button onClick={addItem}>Adicionar Item</button>
+      <ul>
+        {itemList.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </div>
-  );
+);
 }
 
 export default App;
