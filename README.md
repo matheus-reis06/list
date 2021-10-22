@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<h2>Deployed [Here]</h2>(https://arraylistadecompras.netlify.app/).
+<br/>
+Deployed [Here](https://arraylistadecompras.netlify.app/).
 
 ## Available Scripts
 
